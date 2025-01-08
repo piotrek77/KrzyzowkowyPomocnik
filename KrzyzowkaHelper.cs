@@ -123,7 +123,7 @@ namespace KrzyzowkowyPomocnik
             //uzupełnianie planszy już istniejącej
             foreach (var wyraz in wyrazy)
             {
-                if (wyraz.wynik.Length > 0)
+                if (true)//(wyraz.wynik.Length > 0)
                 {
                     if (wyraz.kierunek == "h") //poziomo
                     {
@@ -137,7 +137,11 @@ namespace KrzyzowkowyPomocnik
                             }
                             else
                             {
-                                plansza[i, wyraz.poczatek.y].litera = litera;
+                                if (plansza[i, wyraz.poczatek.y].litera == znakPusty || plansza[i,wyraz.poczatek.y].litera == ' ')
+                                {
+                                    plansza[i, wyraz.poczatek.y].litera = litera;
+                                }
+                                    
                             }
                             plansza[i, wyraz.poczatek.y].doHasla = false;
                             if (wyraz.litery.Contains(i - wyraz.poczatek.x))
@@ -158,13 +162,18 @@ namespace KrzyzowkowyPomocnik
                         {
                             int indeks = i - wyraz.poczatek.y;
                             char litera = wyraz.wynik.Length > indeks ? wyraz.wynik[i - wyraz.poczatek.y] : ' ';
-                            if (plansza[wyraz.poczatek.x, i].litera != znakPusty && litera != ' ' && litera != plansza[wyraz.poczatek.x, i].litera)
+                            if (plansza[wyraz.poczatek.x, i].litera != znakPusty && plansza[wyraz.poczatek.x, i].litera != ' ' && litera != ' ' && litera != plansza[wyraz.poczatek.x, i].litera)
                             {
                                 Console.WriteLine($"Kolizja liter, wyraz: {wyraz.id}{wyraz.kierunek}, na pozyji {wyraz.poczatek.x},{i}");
                             }
                             else
                             {
-                                plansza[wyraz.poczatek.x, i].litera = litera;
+                                if (plansza[wyraz.poczatek.x, i].litera == znakPusty || plansza[wyraz.poczatek.x,i].litera== ' ')
+                                {
+                                    plansza[wyraz.poczatek.x, i].litera = litera;
+                                }
+                                
+                                
                             }
 
                             plansza[wyraz.poczatek.x, i].doHasla = false;
