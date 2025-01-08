@@ -10,12 +10,12 @@ krzyzowkaHelper.LoadFromFile("krzyzowka.json");
 
 
 
-Slownik slownik = Slownik.GetInstance();
+//Slownik slownik = Slownik.GetInstance();
 
 foreach (var item in krzyzowkaHelper.Wyrazy)
 {
     Console.WriteLine(item);
 }
 
-
+krzyzowkaHelper.Rysuj();
 Console.WriteLine("Koniec");

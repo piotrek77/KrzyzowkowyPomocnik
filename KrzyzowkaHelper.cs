@@ -13,7 +13,7 @@ namespace KrzyzowkowyPomocnik
 
 
         Pole[,] plansza;
-       
+
 
         private Krzyzowka krzyzowka;
         private List<WyrazHelper> wyrazy;
@@ -38,9 +38,9 @@ namespace KrzyzowkowyPomocnik
             };
             this.wyrazy = new List<WyrazHelper>();
 
-            foreach(Wyraz wyraz in wyrazy)
+            foreach (Wyraz wyraz in wyrazy)
             {
-                WyrazHelper wyrazHelper =  new WyrazHelper(wyraz);
+                WyrazHelper wyrazHelper = new WyrazHelper(wyraz);
                 this.wyrazy.Add(wyrazHelper);
             }
 
@@ -58,7 +58,7 @@ namespace KrzyzowkowyPomocnik
                     throw new Exception("Nieprawidłowy kierunek wyrazu");
                 }
 
-                if (wyraz.dlugosc<1)
+                if (wyraz.dlugosc < 1)
                 {
                     throw new Exception("Nieprawidłowa długość wyrazu <1");
                 }
@@ -74,7 +74,7 @@ namespace KrzyzowkowyPomocnik
                 }
             }
 
-            
+
         }
         private void RobPlansze()
         {
@@ -100,7 +100,7 @@ namespace KrzyzowkowyPomocnik
                     {
                         wymiarX = wyraz.poczatek.x + wyraz.dlugosc;
                     }
-                    if (wyraz.poczatek.y +1 > wymiarY)
+                    if (wyraz.poczatek.y + 1 > wymiarY)
                     {
                         wymiarY = wyraz.poczatek.y + 1;
                     }
@@ -119,40 +119,59 @@ namespace KrzyzowkowyPomocnik
 
 
 
-
+            char znakPusty = Pole.ZnakPusty;
             //uzupełnianie planszy już istniejącej
             foreach (var wyraz in wyrazy)
             {
-                if (wyraz.kierunek == "h") //poziomo
+                if (wyraz.wynik.Length > 0)
                 {
-                    for (int i = wyraz.poczatek.x; i < wyraz.poczatek.x + wyraz.dlugosc; i++)
+                    if (wyraz.kierunek == "h") //poziomo
                     {
-                        int indeks = i - wyraz.poczatek.x;
-
-                        plansza[i, wyraz.poczatek.y].litera = wyraz.wynik.Length > indeks ? wyraz.wynik[i - wyraz.poczatek.x] : ' ';
-                        plansza[i, wyraz.poczatek.y].doHasla = false;
-                        if (wyraz.litery.Contains(i - wyraz.poczatek.x))
+                        for (int i = wyraz.poczatek.x; i < wyraz.poczatek.x + wyraz.dlugosc; i++)
                         {
-                            plansza[i, wyraz.poczatek.y].doHasla = true;
+                            int indeks = i - wyraz.poczatek.x;
+                            char litera = wyraz.wynik.Length > indeks ? wyraz.wynik[i - wyraz.poczatek.x] : ' ';
+                            if (plansza[i, wyraz.poczatek.y].litera != znakPusty && litera != ' ' && litera != plansza[i, wyraz.poczatek.y].litera)
+                            {
+                                Console.WriteLine($"Kolizja liter, wyraz: {wyraz.id}{wyraz.kierunek}, na pozyji {i},{wyraz.poczatek.y}");
+                            }
+                            else
+                            {
+                                plansza[i, wyraz.poczatek.y].litera = litera;
+                            }
+                            plansza[i, wyraz.poczatek.y].doHasla = false;
+                            if (wyraz.litery.Contains(i - wyraz.poczatek.x))
+                            {
+                                plansza[i, wyraz.poczatek.y].doHasla = true;
+                            }
                         }
+
+
+
+
                     }
-
-
-
-
-                }
-                else
-                {
-                    //czyli kierunek == "v"
-
-                    for (int i = wyraz.poczatek.y; i < wyraz.poczatek.y + wyraz.dlugosc; i++)
+                    else
                     {
-                        int indeks = i - wyraz.poczatek.y;
-                        plansza[wyraz.poczatek.x, i].litera = wyraz.wynik.Length > indeks ? wyraz.wynik[i - wyraz.poczatek.y] : ' ';
-                        plansza[wyraz.poczatek.x, i].doHasla = false;
-                        if (wyraz.litery.Contains(i - wyraz.poczatek.y))
+                        //czyli kierunek == "v"
+
+                        for (int i = wyraz.poczatek.y; i < wyraz.poczatek.y + wyraz.dlugosc; i++)
                         {
-                            plansza[wyraz.poczatek.x, i].doHasla = true;
+                            int indeks = i - wyraz.poczatek.y;
+                            char litera = wyraz.wynik.Length > indeks ? wyraz.wynik[i - wyraz.poczatek.y] : ' ';
+                            if (plansza[wyraz.poczatek.x, i].litera != znakPusty && litera != ' ' && litera != plansza[wyraz.poczatek.x, i].litera)
+                            {
+                                Console.WriteLine($"Kolizja liter, wyraz: {wyraz.id}{wyraz.kierunek}, na pozyji {wyraz.poczatek.x},{i}");
+                            }
+                            else
+                            {
+                                plansza[wyraz.poczatek.x, i].litera = litera;
+                            }
+
+                            plansza[wyraz.poczatek.x, i].doHasla = false;
+                            if (wyraz.litery.Contains(i - wyraz.poczatek.y))
+                            {
+                                plansza[wyraz.poczatek.x, i].doHasla = true;
+                            }
                         }
                     }
                 }
@@ -164,10 +183,40 @@ namespace KrzyzowkowyPomocnik
             // wczytaj krzyżówkę z pliku
             //string jsonString = File.ReadAllText(filename);
             //var wyrazy = JsonSerializer.Deserialize<List<Wyraz>>(jsonString) ?? new List<Wyraz>();
-            string jsonString = JsonSerializer.Serialize(Wyrazy, options: new JsonSerializerOptions() { WriteIndented = true});
+            string jsonString = JsonSerializer.Serialize(Wyrazy, options: new JsonSerializerOptions() { WriteIndented = true });
             File.WriteAllText(filename, jsonString);
 
 
+        }
+
+
+        public void Rysuj()
+        {
+            int SZEROKOSC = 3;
+            for (int j = 0; j < plansza.GetLength(0); j++)
+            {
+                Console.Write(j.ToString().PadLeft(SZEROKOSC) + "|");
+            }
+            Console.WriteLine();
+            for (int j = 0; j < plansza.GetLength(0); j++)
+            {
+                Console.Write("---" + "|");
+            }
+            Console.WriteLine();
+            for (int i = 0; i < plansza.GetLength(1); i++)
+            {
+                for (int j = 0; j < plansza.GetLength(0); j++)
+                {
+                    Console.Write(" " + plansza[j, i].litera + " |");
+
+                }
+                Console.WriteLine();
+                for (int j = 0; j < plansza.GetLength(0); j++)
+                {
+                    Console.Write("---" + "|");
+                }
+                Console.WriteLine();
+            }
         }
     }
 }
