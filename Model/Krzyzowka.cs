@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace KrzyzowkowyPomocnik.Model
 {
-    internal class Krzyzowka
+    public class Krzyzowka
     {
+        public Wyraz[] wyrazy { get; set; }
     }
 }
