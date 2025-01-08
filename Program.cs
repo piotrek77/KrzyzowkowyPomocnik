@@ -42,12 +42,26 @@ do
 
         var parsedTekst = StringParser.ParseString(wybor);
 
-        if (parsedTekst.polecenie.Length == 0 && parsedTekst.id >0 && parsedTekst.kierunek.Length == 1)
+        if (parsedTekst.polecenie.Length == 0 && parsedTekst.id > 0 && parsedTekst.kierunek.Length == 1)
         {
             krzyzowkaHelper.SetWyraz(parsedTekst.id, parsedTekst.kierunek, parsedTekst.tekst);
         }
 
 
+    }
+    else
+    {
+        switch (wybor)
+        {
+
+            case "save":
+                krzyzowkaHelper.SaveToFile("krzyzowka.json");
+                break;
+
+
+
+
+        }
     }
 
 
