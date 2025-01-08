@@ -17,5 +17,51 @@ foreach (var item in krzyzowkaHelper.Wyrazy)
     Console.WriteLine(item);
 }
 
-krzyzowkaHelper.Rysuj();
+
+
+string wybor = "";
+string[] poleceniaWyjscia = { "quit", "exit", "q" };
+string lastCommand = "";
+do
+{
+    krzyzowkaHelper.Rysuj();
+    Console.WriteLine("Podaj komendę (quit, exit, q - wyjście):");
+    Console.WriteLine("Polecenia dot wyrazów, np. 12v /polecenie, albo 12v wyraz, 12v to oczywiście 12 pionowo, 12h - 12 poziomo");
+    wybor = Console.ReadLine();
+    if (wybor == "!!")
+        wybor = lastCommand;
+    else
+    {
+        if (wybor.Length > 0)
+            lastCommand = wybor;
+    }
+
+
+    if (CzyZaczynaSieOdCyfry(wybor))
+    {
+
+        var parsedTekst = StringParser.ParseString(wybor);
+
+        if (parsedTekst.polecenie.Length == 0 && parsedTekst.id >0 && parsedTekst.kierunek.Length == 1)
+        {
+            krzyzowkaHelper.SetWyraz(parsedTekst.id, parsedTekst.kierunek, parsedTekst.tekst);
+        }
+
+
+    }
+
+
+} while (!poleceniaWyjscia.Contains(wybor));
+
 Console.WriteLine("Koniec");
+
+
+
+
+bool CzyZaczynaSieOdCyfry(string text)
+{
+    if (string.IsNullOrEmpty(text))
+        return false; // Sprawdzenie, czy ciąg jest pusty lub null
+
+    return text[0] >= '0' && text[0] <= '9';
+}

@@ -199,6 +199,28 @@ namespace KrzyzowkowyPomocnik
         }
 
 
+        public void SetWyraz(int id, string kierunek, string wynik)
+        {
+            Wyraz wyraz = wyrazy.FirstOrDefault(w => w.id == id && w.kierunek == kierunek);
+            if (wyraz != null)
+            {
+                if (wynik.Length > 0 && wynik.Length != wyraz.dlugosc)
+                {
+                    Console.WriteLine("Nieprawidłowa długość wyrazu");
+                    return;
+                }
+
+                wyraz.wynik = wynik;
+                RobPlansze();
+            }
+            else
+            {
+                Console.WriteLine("Nie znaleziono wyrazu o podanym id i kierunku");
+                return;
+            }
+        }
+
+
         public void Rysuj()
         {
             int SZEROKOSC = 3;
