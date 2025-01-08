@@ -1,0 +1,410 @@
+[
+  {
+    "id": 1,
+    "kierunek": "h",
+    "dlugosc": 5,
+    "poczatek": {
+      "x": 8,
+      "y": 0
+    },
+    "litery": [],
+    "opis": "Pan Bóg też go nosi",
+    "wynik": ""
+  },
+  {
+    "id": 4,
+    "kierunek": "h",
+    "dlugosc": 5,
+    "poczatek": {
+      "x": 14,
+      "y": 0
+    },
+    "litery": [],
+    "opis": "prehistoryczne warzywo",
+    "wynik": ""
+  },
+  {
+    "id": 7,
+    "kierunek": "h",
+    "dlugosc": 3,
+    "poczatek": {
+      "x": 12,
+      "y": 2
+    },
+    "litery": [],
+    "opis": "to jest nasz ostatni",
+    "wynik": ""
+  },
+  {
+    "id": 8,
+    "kierunek": "h",
+    "dlugosc": 5,
+    "poczatek": {
+      "x": 8,
+      "y": 3
+    },
+    "litery": [ 0 ],
+    "opis": "Pan Tadeusz albo Pani Bovary",
+    "wynik": ""
+  },
+  {
+    "id": 9,
+    "kierunek": "h",
+    "dlugosc": 5,
+    "poczatek": {
+      "x": 14,
+      "y": 3
+    },
+    "litery": [ 1 ],
+    "opis": "każe nosić",
+    "wynik": ""
+  },
+  {
+    "id": 10,
+    "kierunek": "h",
+    "dlugosc": 11,
+    "poczatek": {
+      "x": 8,
+      "y": 5
+    },
+    "litery": [ 10 ],
+    "opis": "nie da ci pracy",
+    "wynik": ""
+  },
+  {
+    "id": 15,
+    "kierunek": "h",
+    "dlugosc": 5,
+    "poczatek": {
+      "x": 0,
+      "y": 7
+    },
+    "litery": [4],
+    "opis": "nieudane danie",
+    "wynik": ""
+  },
+  {
+    "id": 18,
+    "kierunek": "h",
+    "dlugosc":6,
+    "poczatek": {
+      "x":6,
+      "y":7
+    },
+    "litery": [1],
+    "opis": "gwiazdka z nieba",
+    "wynik": ""
+  },
+  {
+    "id":19,
+    "kierunek": "h",
+    "dlugosc":6,
+    "poczatek": {
+      "x":13,
+      "y":7
+    },
+    "litery": [],
+    "opis": "brukowa onomatopeja",
+    "wynik": ""
+  },
+  {
+    "id":20,
+    "kierunek": "h",
+    "dlugosc":3,
+    "poczatek": {
+      "x":4,
+      "y":9
+    },
+    "litery": [],
+    "opis": "mistrzyni talii",
+    "wynik": ""
+  },
+  {
+    "id":22,
+    "kierunek": "h",
+    "dlugosc":8,
+    "poczatek": {
+      "x":11,
+      "y":9
+    },
+    "litery": [],
+    "opis": "udaje koszulę",
+    "wynik": ""
+  },
+  {
+    "id":26,
+    "kierunek": "h",
+    "dlugosc":5,
+    "poczatek": {
+      "x":0,
+      "y":10
+    },
+    "litery": [],
+    "opis": "postać w gabinecie cieni",
+    "wynik": ""
+  },
+  {
+    "id":27,
+    "kierunek": "h",
+    "dlugosc":6,
+    "poczatek": {
+      "x":6,
+      "y":10
+    },
+    "litery": [2],
+    "opis": "ciało niebieskie",
+    "wynik": ""
+  },
+  {
+    "id":28,
+    "kierunek": "h",
+    "dlugosc":8,
+    "poczatek": {
+      "x":11,
+      "y":11
+    },
+    "litery": [],
+    "opis": "do czytania przed snem",
+    "wynik": ""
+  },
+  {
+    "id":29,
+    "kierunek": "h",
+    "dlugosc":10,
+    "poczatek": {
+      "x":0,
+      "y": 12
+    },
+    "litery": [4,7],
+    "opis": "do czytania i składania",
+    "wynik": ""
+  },
+  {
+    "id":30,
+    "kierunek": "h",
+    "dlugosc":10,
+    "poczatek": {
+      "x":9,
+      "y": 13
+    },
+    "litery": [3,6,7],
+    "opis": "kierowca w filmie",
+    "wynik": ""
+  },
+  {
+    "id":1,
+    "kierunek": "v",
+    "dlugosc":9,
+    "poczatek": {
+      "x":8,
+      "y":0
+    },
+    "litery": [3],
+    "opis": "ze słynną zemstą",
+    "wynik": ""
+  },
+  {
+    "id":2,
+    "kierunek": "v",
+    "dlugosc":6,
+    "poczatek": {
+      "x":10,
+      "y":0
+    },
+    "litery": [],
+    "opis": "zakochana w pięknej",
+    "wynik": "bestia"
+  },
+  {
+    "id":3,
+    "kierunek": "v",
+    "dlugosc":6,
+    "poczatek": {
+      "x":12,
+      "y":0
+    },
+    "litery": [],
+    "opis": "pada niedaleko od korony",
+    "wynik": ""
+  },
+  {
+    "id":4,
+    "kierunek": "v",
+    "dlugosc":6,
+    "poczatek": {
+      "x":14,
+      "y":6
+    },
+    "litery": [],
+    "opis": "figi bez maku",
+    "wynik": ""
+  },
+  {
+    "id":5,
+    "kierunek": "v",
+    "dlugosc":6,
+    "poczatek": {
+      "x":16,
+      "y":0
+    },
+    "litery": [],
+    "opis": "przed Bitwą pod Grnwaldem",
+    "wynik": ""
+  },
+  {
+    "id":6,
+    "kierunek": "v",
+    "dlugosc":6,
+    "poczatek": {
+      "x":18,
+      "y":0
+    },
+    "litery": [5],
+    "opis": "arktyczny zespół",
+    "wynik": ""
+  },
+  {
+    "id":11,
+    "kierunek": "v",
+    "dlugosc":9,
+    "poczatek": {
+      "x":11,
+      "y":5
+    },
+    "litery": [],
+    "opis": "amator kolejek",
+    "wynik": ""
+  },
+  {
+    "id":12,
+    "kierunek": "v",
+    "dlugosc":5,
+    "poczatek": {
+      "x":13,
+      "y":5
+    },
+    "litery": [],
+    "opis": "kuchenne potyczki",
+    "wynik": ""
+  },
+  {
+    "id":13,
+    "kierunek": "v",
+    "dlugosc":5,
+    "poczatek": {
+      "x":15,
+      "y":5
+    },
+    "litery": [],
+    "opis": "działa na fali",
+    "wynik": ""
+  },
+  {
+    "id":14,
+    "kierunek": "v",
+    "dlugosc":5,
+    "poczatek": {
+      "x":17,
+      "y":5
+    },
+    "litery": [],
+    "opis": "niejedno w pochodzie",
+    "wynik": ""
+  },
+  {
+    "id":15,
+    "kierunek": "v",
+    "dlugosc":7,
+    "poczatek": {
+      "x":0,
+      "y":7
+    },
+    "litery": [6],
+    "opis": "tkanina jak kraina",
+    "wynik": ""
+  },
+  {
+    "id":16,
+    "kierunek": "v",
+    "dlugosc":7,
+    "poczatek": {
+      "x":2,
+      "y":7
+    },
+    "litery": [],
+    "opis": "wyleciał z garnka",
+    "wynik": ""
+  },
+  {
+    "id":17,
+    "kierunek": "v",
+    "dlugosc":7,
+    "poczatek": {
+      "x":4,
+      "y":7
+    },
+    "litery": [0,5],
+    "opis": "blisko brata lub braciszka",
+    "wynik": ""
+  },
+  {
+    "id":18,
+    "kierunek": "v",
+    "dlugosc":7,
+    "poczatek": {
+      "x":6,
+      "y":7
+    },
+    "litery": [],
+    "opis": "dzieła z patyną",
+    "wynik": ""
+  },
+  {
+    "id":21,
+    "kierunek": "v",
+    "dlugosc":5,
+    "poczatek": {
+      "x":9,
+      "y":9
+    },
+    "litery": [],
+    "opis": "jednonogi bandyta",
+    "wynik": ""
+  },
+  {
+    "id":23,
+    "kierunek": "v",
+    "dlugosc":5,
+    "poczatek": {
+      "x":14,
+      "y":9
+    },
+    "litery": [],
+    "opis": "działanie z prądem",
+    "wynik": ""
+  },
+  {
+    "id":24,
+    "kierunek": "v",
+    "dlugosc":5,
+    "poczatek": {
+      "x":16,
+      "y":9
+    },
+    "litery": [3,4],
+    "opis": "ze schodami na deskach",
+    "wynik": ""
+  },
+  {
+    "id":25,
+    "kierunek": "v",
+    "dlugosc":5,
+    "poczatek": {
+      "x":18,
+      "y":9
+    },
+    "litery": [1,3],
+    "opis": "przykry dokument",
+    "wynik": ""
+  }
+]

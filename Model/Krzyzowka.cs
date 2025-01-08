@@ -8,6 +8,6 @@ namespace KrzyzowkowyPomocnik.Model
 {
     public class Krzyzowka
     {
-        public Wyraz[] wyrazy { get; set; }
+        public List<Wyraz> wyrazy { get; set; }
     }
 }

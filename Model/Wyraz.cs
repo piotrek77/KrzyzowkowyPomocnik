@@ -9,6 +9,7 @@ namespace KrzyzowkowyPomocnik.Model
 
     public class Wyraz
     {
+        public int id { get; set; }
         public string kierunek { get; set; }
         public int dlugosc { get; set; }
         public Wspolrzedne poczatek { get; set; }
